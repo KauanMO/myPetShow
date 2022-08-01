@@ -1,0 +1,11 @@
+#title {
+    text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+#subTexto {
+    font-size: small;
+}

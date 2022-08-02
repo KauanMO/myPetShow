@@ -37,24 +37,24 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
             <div class="modal-body">
-                <form action="./cadastrar.php" method="post">
+                <form action="./database/cadastrar.php" method="post">
                 <div>
                 <input type="hidden" placeholder="idCadastro" name="idCadastro"/>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="user" class="form-control" id="userCadastro" placeholder="Usuário">
+                    <input type="user" class="form-control" name="userCadastro" id="userCadastro" placeholder="Usuário">
                     <label for="floatingInput">Usuário</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="emailCadastro" placeholder="exemplo@gmail.com">
+                    <input type="email" class="form-control" name="emailCadastro" id="emailCadastro" placeholder="exemplo@gmail.com">
                     <label for="floatingInput">Email</label>
                 </div>
                 <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="senhaCadastro" placeholder="Senha">
+                <input type="password" class="form-control" name="senhaCadastro" id="senhaCadastro" placeholder="Senha">
                     <label for="senhaCadastro">Senha</label>
                 </div>
                 <div class="form-floating">
-                <input type="password" class="form-control" id="confirmSenhaCadastro" placeholder="Confirme a senha">
+                <input type="password" class="form-control" name="confirmSenhaCadastro" id="confirmSenhaCadastro" placeholder="Confirme a senha">
                     <label for="confirmSenhaCadastro">Confirme a senha</label>
                 </div>
                 <br>

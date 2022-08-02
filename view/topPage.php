@@ -20,13 +20,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Sobre</a>
+                <a class="nav-link" aria-current="page" href="#">Projeto</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#"></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="">Teste</a>
+                <a class="nav-link" href="#">Sobre mim</a>
                 </li>
                 
             </ul>

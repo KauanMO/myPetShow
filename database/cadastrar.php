@@ -1,8 +1,8 @@
 <?php
 
-    include_once ".connection.php";
+    include_once "./connection.php";
 
-    require_once "./models/usuario.php";
+    require_once "../model/usuario.php";
 
     $pdo = Connection::conectar();
 
@@ -19,7 +19,7 @@
             time() + 1,
             "/"
         );
-        header("location:./index.php");
+        //header("location:../index.php");
     }else if (strlen($senhaCadastro) < 6) {
         setcookie(
             "senha-pequena",
@@ -27,7 +27,7 @@
             time() + 1,
             "/"
         );
-        header("location:./index.php");
+        //header("location:../index.php");
     }else if ($senhaCadastro != $confirmSenha) {
         setcookie(
              "senhas-diferentes",
@@ -35,12 +35,12 @@
              time() + 1,
              "/"
          ); 
-          header("location:./pagCadastro.php");
+          header("location:../index.php");
         }else {
             $stmt = $pdo->prepare(
-                "insert into tbUsuario values(null, '$userCadastro',$emailCadastro, '$senhaCadastro')"
+                "insert into tbusuario values(null, '$userCadastro', '$emailCadastro', '$senhaCadastro')"
             );
             $stmt->execute();
-            header("location:../index.php");
+           // header("location:../index.php");
         }
 ?>

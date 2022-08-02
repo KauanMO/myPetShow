@@ -1,5 +1,5 @@
 <?php
-require_once ("../layout/connection.php");
+require_once ("../database/connection.php");
 
 class usuario
 {

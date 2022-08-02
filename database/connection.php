@@ -1,9 +1,9 @@
 <?php
 
-    class Conecction {
+    class Connection {
         public static function conectar() {
             $conexao = new PDO("mysql: host=localhost;
-            bdname=bdPetShow",
+            dbname=bdpetshow",
             "root",
             "");
             $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -11,6 +11,4 @@
             return $conexao;
         }
     }
-
-
 ?>

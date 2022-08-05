@@ -7,13 +7,13 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <form action="./login.php" method="post">
+                    <form action="./database/login.php" method="post">
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="emailLogin" placeholder="exemplo@gmail.com">
+                        <input type="email" class="form-control" id="emailLogin" name="emailLogin" placeholder="exemplo@gmail.com">
                         <label for="emailLogin">Email</label>
                     </div>
                     <div class="form-floating">
-                    <input type="password" class="form-control" id="senhaLogin" placeholder="Senha">
+                    <input type="password" class="form-control" id="senhaLogin" name="senhaLogin" placeholder="Senha">
                         <label for="senhaLogin">Senha</label>
                     </div>
                     <br>
@@ -42,23 +42,23 @@
                 <input type="hidden" placeholder="idCadastro" name="idCadastro"/>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="user" class="form-control" name="userCadastro" id="userCadastro" placeholder="Usuário">
+                    <input type="user" class="form-control" name="userCadastro" id="userCadastro" placeholder="Usuário" minlength="5" maxLength="15" required>
                     <label for="floatingInput">Usuário</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" name="emailCadastro" id="emailCadastro" placeholder="exemplo@gmail.com">
+                    <input type="email" class="form-control" name="emailCadastro" id="emailCadastro" placeholder="exemplo@gmail.com" required>
                     <label for="floatingInput">Email</label>
                 </div>
                 <div class="form-floating mb-3">
-                <input type="password" class="form-control" name="senhaCadastro" id="senhaCadastro" placeholder="Senha">
+                <input type="password" class="form-control" name="senhaCadastro" id="senhaCadastro" onChange="onChange()" placeholder="Senha" required>
                     <label for="senhaCadastro">Senha</label>
                 </div>
                 <div class="form-floating">
-                <input type="password" class="form-control" name="confirmSenhaCadastro" id="confirmSenhaCadastro" placeholder="Confirme a senha">
+                <input type="password" class="form-control" name="confirmSenhaCadastro" id="confirmSenhaCadastro" onChange="onChange()" placeholder="Confirme a senha" required>
                     <label for="confirmSenhaCadastro">Confirme a senha</label>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" id="botaoSubmit" class="btn btn-primary">Enviar</button>
                 </form>
                 <div class="subTexto" id="subTexto"><p>Já tem uma conta? <a href="#" data-bs-toggle="modal" data-bs-target="#ModalLogin">Faça login aqui</a></p></div>
             </div>
@@ -66,3 +66,18 @@
         
     </div>
 </div>
+
+<script>
+        function onChange() {
+            const password = document.querySelector('input[id=senhaCadastro]');
+            const aviso = document.getElementById('aviso');
+            const confirm = document.querySelector('input[id=confirmSenhaCadastro]');
+            if (confirm.value === password.value) {
+                confirm.setCustomValidity('');
+                aviso.classList.add('d-none');
+            } else {
+                confirm.setCustomValidity('Senhas não coincidem');
+                aviso.classList.remove('d-none');
+            }
+        }
+    </script>
